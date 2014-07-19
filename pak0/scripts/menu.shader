@@ -41,3 +41,11 @@ white_arrow_small
 	}
 }
 
+button
+{
+	nopicmip
+	{
+		map gfx/menu/button.tga
+	}
+}
+
