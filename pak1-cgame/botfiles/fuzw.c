@@ -20,197 +20,90 @@ along with Foobar; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
+//
+// fuzw.c -- weights for weapon use
 
-weight "BFG10K"
-{
-	switch(INVENTORY_BFG10K)
-	{
-		case 1: return 0;
-		default: 
-		{
-		switch(INVENTORY_BFGAMMO)
-			{
-			case 1: return 0;
-			default: return BFW;
-			}
-		}
-	} 
-} 
-
-weight "Chaingun"
-{
-	switch(INVENTORY_CHAINGUN)
-	{
-		case 1: return 0;
-		default: 
-		{
-		switch(INVENTORY_BELT)
-			{
-			case 1: return 0;
-			default: 
-				{
-				switch(ENEMY_HORIZONTAL_DIST)
-					{
-					case 900: return CGW;
-					default: return $evalint(CGW*0.1);
-					}
-				}
-			}
-		}
-	} 
-} 
-
+// The gauntlet does always have a positive weight, so the
+// bot will fall back to it if there are no other weapons.
+// It there are no weapons at all and all weights are zero,
+// the bot will not switch weapons.
 
 weight "Gauntlet"
 {
-	switch(INVENTORY_GAUNTLET)
-		{
-		case 1: return 0;
-		default: return GTW;
-		} 
-} 
-
-weight "Grappling Hook"
-{
-	switch(INVENTORY_GRAPPLINGHOOK)
-	{
-		case 1: return 0;
-		default: return GRW;
-	} 
-} 
-
-
-weight "Grenade Launcher"
-{
-	switch(INVENTORY_GRENADELAUNCHER)
-	{
-		case 1: return 0;
-		default: 
-		{
-		switch(INVENTORY_GRENADES)
-			{
-			case 1: return 0;
-			default: 
-				{
-				switch(ENEMY_HORIZONTAL_DIST)
-					{
-					case 600: return GLW;
-					default: return $evalint(GLW*0.1);
-					}
-				}
-			}
+	switch (INVENTORY_GAUNTLET) {
+	case 1: return 0;
+	default:
+		switch (ENEMY_HORIZONTAL_DIST) {
+		case 50: return GTW;
+		default: return 1;
 		}
-	} 
-} 
-
-weight "Lightning Gun"
-{
-	switch(INVENTORY_LIGHTNING)
-	{
-		case 1: return 0;
-		default: 
-		{
-		switch(INVENTORY_LIGHTNINGAMMO)
-			{
-			case 1: return 0;
-			default: 
-				{
-				switch(ENEMY_HORIZONTAL_DIST)
-					{
-					case 768: return LGW;
-					default: return $evalint(LGW*0.1);
-					}
-				}
-			}
-		}
-	} 
+	}
 }
 
 weight "Machinegun"
 {
-	switch(INVENTORY_MACHINEGUN)
-	{
+	switch (INVENTORY_MACHINEGUN) {
+	case 1: return 0;
+	default:
+		switch (INVENTORY_BULLETS) {
 		case 1: return 0;
-		default: 
-		{
-		switch(INVENTORY_BULLETS)
-			{
-			case 1: return 0;
-			default: 
-				{
-				switch(ENEMY_HORIZONTAL_DIST)
-					{
-					case 800: return MGW;
-					default: return $evalint(MGW*0.1);
-					}
-				}
+		default:
+			switch (ENEMY_HORIZONTAL_DIST) {
+			case 800: return MGW;
+			default: return $evalint(MGW * 0.1);
 			}
 		}
-	} 
-} 
+	}
+}
 
-weight "Nailgun"
+weight "Shotgun"
 {
-	switch(INVENTORY_NAILGUN)
-	{
+	switch (INVENTORY_SHOTGUN) {
+	case 1: return 0;
+	default:
+		switch (INVENTORY_SHELLS) {
 		case 1: return 0;
-		default: 
-		{
-		switch(INVENTORY_NAILS)
-			{
-			case 1: return 0;
-			default: 
-				{
-				switch(ENEMY_HORIZONTAL_DIST)
-					{
-					case 800: return NGW;
-					default: return $evalint(NGW*0.1);
-					}
-				}
+		default:
+			switch (ENEMY_HORIZONTAL_DIST) {
+			case 600: return SGW;
+			default: return $evalint(SGW*0.1);
 			}
 		}
-	} 
-} 
+	}
+}
 
-weight "Plasma Gun"
+weight "Grenade Launcher"
 {
-	switch(INVENTORY_PLASMAGUN)
-	{
+	switch (INVENTORY_GRENADELAUNCHER) {
+	case 1: return 0;
+	default:
+		switch (INVENTORY_GRENADES) {
 		case 1: return 0;
-		default: 
-		{
-		switch(INVENTORY_CELLS)
-			{
-			case 1: return 0;
-			default: 
-				{
-				switch(ENEMY_HORIZONTAL_DIST)
-					{
-					case 2000: return PGW;
-					default: return $evalint(PGW*0.1);
-					}
-				}
+		default:
+			switch (ENEMY_HORIZONTAL_DIST) {
+			case 600: return GLW;
+			default: return $evalint(GLW*0.1);
 			}
 		}
-	} 
-} 
+	}
+}
 
-weight "Prox Launcher"
+weight "Rocket Launcher"
 {
-	switch(INVENTORY_PROXLAUNCHER)
+	switch (INVENTORY_ROCKETLAUNCHER)
 	{
 		case 1: return 0;
-		default: 
+		default:
 		{
-		switch(INVENTORY_MINES)
+		switch (INVENTORY_ROCKETS)
 			{
 			case 1: return 0;
-			default: 
+			default:
 				{
-				switch(ENEMY_HORIZONTAL_DIST)
+				switch (ENEMY_HORIZONTAL_DIST)
 					{
-					case 200: return PXW;
-					default: return $evalint(PXW*0.1);
+					case 4000: return RLW;
+					default: return $evalint(RLW * 0.1);
 					}
 				}
 			}
@@ -218,65 +111,53 @@ weight "Prox Launcher"
 	}
 }
 
-weight "Railgun"
+weight "Lightning Gun"
 {
-	switch(INVENTORY_RAILGUN)
-	{
+	switch (INVENTORY_LIGHTNING) {
+	case 1: return 0;
+	default:
+		switch (INVENTORY_LIGHTNINGAMMO) {
 		case 1: return 0;
-		default: 
-		{
-		switch(INVENTORY_SLUGS)
-			{
-			case 1: return 0;
-			default: return RGW;
+		default:
+			switch (ENEMY_HORIZONTAL_DIST) {
+			case 768: return LGW;
+			default: return 0;
 			}
 		}
-	} 
-} 
+	}
+}
 
-
-weight "Rocket Launcher"
+weight "Railgun"
 {
-	switch(INVENTORY_ROCKETLAUNCHER)
-	{
+	switch (INVENTORY_RAILGUN) {
+	case 1: return 0;
+	default:
+		switch (INVENTORY_SLUGS) {
 		case 1: return 0;
-		default: 
-		{
-		switch(INVENTORY_ROCKETS)
-			{
-			case 1: return 0;
-			default: 
-				{
-				switch(ENEMY_HORIZONTAL_DIST)
-					{
-					case 4000: return RLW;
-					default: return $evalint(RLW*0.1);
-					}
+		default:
+			switch (NUM_VISIBLE_ENEMIES) {
+			case 1: return $evalint(RGW * 0.2);
+			default:
+				switch (ENEMY_HORIZONTAL_DIST) {
+				case 300: return $evalint(0.1 * RGW);
+				case 768: return $evalint(0.3 * RGW);
+				default: return RGW;
 				}
 			}
 		}
-	} 
-} 
-
-weight "Shotgun"
-{
-	switch(INVENTORY_SHOTGUN)
-	{
-		case 1: return 0;
-		default: 
-		{
-		switch(INVENTORY_SHELLS)
-			{
-			case 1: return 0;
-			default: 
-				{
-				switch(ENEMY_HORIZONTAL_DIST)
-					{
-					case 600: return SGW;
-					default: return $evalint(SGW*0.1);
-					}
-				}			
-			}
-		}
-	} 
+	}
 }
+
+weight "Plasma Gun"
+{
+	switch (INVENTORY_PLASMAGUN) {
+	case 1: return 0;
+	default:
+		switch (INVENTORY_CELLS) {
+		case 1: return 0;
+		default:
+			return PGW;
+		}
+	}
+}
+

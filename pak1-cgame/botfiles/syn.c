@@ -20,75 +20,43 @@ along with Foobar; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
+//
+// syn.c -- synonyms
 
 #include "syn.h"
 
-
 CONTEXT_NEARBYITEM
 {
-	
 	[("red armor", 0), ("red armour", 0)]
 	[("yellow armor", 0), ("yellow armour", 0)]
-	[("Mega Health", 0), ("mh", 0)] 
+	[("Mega Health", 0), ("mh", 0)]
 	
-	[("Shotgun", 1), ("shot gun", 0.5), ("boom stick", 0.7), ("scatter gun", 0.3)]
 	[("Machinegun", 1), ("machine gun", 0.5), ("pop gun", 0.3)]
+	[("Shotgun", 1), ("shot gun", 0.5), ("boom stick", 0.7), ("scatter gun", 0.3)]
 	[("Grenade Launcher", 1), ("little bertha", 0.5)]
 	[("Rocket Launcher", 1), ("big bertha", 0.5)]
 	[("Lightning Gun", 1), ("buzz gun", 0.2)]
 	[("Plasma Gun", 1), ("plasmatic 5000", 0.3), ("blue balls of doom", 0.2)]
 	[("Railgun", 1), ("sniper rifle", 0.5), ("camping tool", 0.2)]
 	[("BFG10K", 1), ("bfg", 0.1), ("crowd control", 0.4)]
-	[("Nailgun", 1), ("house framer", 0.1), ("nail shooter", 0.5)]
-	[("Prox Launcher", 1), ("mine spewer", 0.2), ("mine layer", 0.5)]
-	[("Chaingun", 1), ("chain gun", 0.5), ("big pop gun", 0.4)]
 	
 	[("Quad Damage", 1), ("quad", 0.7)]
 	[("Regeneration", 1), ("regen", 0.6)]
 	[("Battle Suit", 1), ("b suit", 0.3)]
 	[("Invisibility", 1), ("invis", 0.7)]
-	[("Invulnerability", 1), ("invincibility", 0.5), ("globe of protection", 0.1)]
-	[("Kamikaze", 1), ("globe of death", 0.5)]
-	[("Neutral Obelisk", 1), ("center obelisk", 0.1), ("skull spawner", 0.5)]
-} 
-
+}
 
 CONTEXT_CTFREDTEAM
 {
 	[("Red Flag", 0), ("our base", 0), ("our flag", 0), ("red base", 0), ("base", 0)]
 	[("Blue Flag", 0), ("enemy base", 0), ("blue base", 0), ("enemy flag", 0), ("their flag", 0), ("their base",0)]
-} 
+}
 
 CONTEXT_CTFBLUETEAM
 {
 	[("Red Flag", 0), ("enemy flag", 0), ("red base", 0), ("enemy base", 0), ("their flag", 0), ("their base",0)]
 	[("Blue Flag", 0), ("our base", 0), ("our flag", 0), ("blue base", 0), ("base", 0)]
-} 
-
-CONTEXT_OBELISKREDTEAM
-{
-	[("Red Obelisk", 0), ("our base", 0), ("red base", 0), ("base", 0), ("our obelisk", 0)]
-	[("Blue Obelisk", 0), ("enemy base", 0), ("blue base", 0), ("enemy obelisk", 0), ("their base", 0), ("their obelisk", 0)]
-} 
-
-CONTEXT_OBELISKBLUETEAM
-{
-	[("Red Obelisk", 0), ("red base", 0), ("enemy base", 0), ("enemy obelisk", 0), ("their base", 0), ("their obelisk", 0)]
-	[("Blue Obelisk", 0), ("our base", 0), ("blue base", 0), ("base", 0), ("our obelisk", 0)]
-} 
-
-
-CONTEXT_HARVESTERREDTEAM
-{
-	[("Red Obelisk", 0), ("our base", 0), ("red base", 0), ("base", 0), ("our obelisk", 0)]
-	[("Blue Obelisk", 0), ("enemy base", 0), ("blue base", 0), ("enemy obelisk", 0), ("their obelisk", 0), ("their base", 0)]
-} 
-
-CONTEXT_HARVESTERBLUETEAM
-{
-	[("Red Obelisk", 0), ("red base", 0), ("enemy base", 0), ("enemy obelisk", 0), ("their obelisk", 0), ("their base", 0)]
-	[("Blue Obelisk", 0), ("our base", 0), ("blue base", 0), ("base", 0), ("our obelisk", 0)]
-} 
+}
 
 CONTEXT_NORMAL
 {
@@ -194,7 +162,7 @@ CONTEXT_NORMAL
 	
 	
 
-} 
+}
 
 CONTEXT_REPLY
 {
@@ -211,7 +179,7 @@ CONTEXT_REPLY
 	[("are", 0), ("am", 0)]
 	[("yourself", 0), ("myself", 0)]
 	[("myself", 0), ("yourself", 0)]
-} 
+}
 
 CONTEXT_NAMES
 {
@@ -229,5 +197,5 @@ CONTEXT_NAMES
 	[("Tony", 1),		("Gangter", 0.5), ("Wussy", 0.3), ("Mamma's boi", 0.1)]
 	[("Beret", 1),		("Commando", 0.5), ("Psychonaut", 0.5), ("War Machine Wannabe", 0.1)]
 	[("Skelebot", 1),	("Skillet", 0.5), ("Arnold", 0.3), ("Termi", 0.1)]
-//	[("Orb", 1),		("Psycod the Magnificant", 0.5), ("Slayer of the 19 cats of Doom", 0.5)]
 }
+

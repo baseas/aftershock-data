@@ -20,6 +20,8 @@ along with Foobar; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
+//
+// rnd.c -- random chat messages
 
 // group A sayings
 
@@ -47,54 +49,18 @@ DEATH_BFG3 = {
 	"Ok, who gave ", 0," the new toy?";
 }
 
-DEATH_KAMIKAZE0 = {
-	"Ya pansy!!!";
-	"You have to admit that takes guts... oh wait...";
-	"I hope your balls fall off in a freak fishing accident.";
-	0, " sucks donkey balls!";
-}
-
-DEATH_KAMIKAZE1 = {
-	"Cheap!";
-	"So this is what death is like...";
-	"Quick, painless, cheap.";
-	"You can do better than that!";
-}
-
-DEATH_KAMIKAZE3 = {
-	fighter, "s like you, ", 0, ", take the fun out of life.";
-	"Oh, I get it.  You want to be left alone.";
-	"Ok, who farted?";
-	"What the hell was that all about?";
-}
-
-KILL_KAMIKAZE0 = {
-	"That'll learn ya!";
-	"pwnd";
-	"Dodge that bitches!";
-	"hehe... I farted.";
-}
-
-KILL_KAMIKAZE1 = {
-	"Told ya so.";
-	"I am all that is bot.";
-	"Now that's what I call fun!";
-	"D'oh!  Missed ", 0,".";
-}
-
-
 DEATH_INSULT0 = {
 	"Life sucks, then you die, big deal.";
 	"should have zagged instead of zigged.";
 	"~I'm not impressed.";
-	
+
 }
 
 DEATH_INSULT1 = {
 	"I expected better from you.";
 	"Lame.";
 	"*tsk* you wasted too much ammo.";
-	"This changes nothing, you still suck.";	
+	"This changes nothing, you still suck.";
 }
 
 DEATH_INSULT2 = {
@@ -109,6 +75,7 @@ DEATH_INSULT3 = {
 	"*sigh* if that only solved anything.";
 	"Trying to impress someone?";
 }
+
 DEATH_INSULT4 = {
 	"That was lame and you know it.";
 	"Does ~your ", counselor, " know about your actions?";
@@ -222,7 +189,7 @@ D_PRAISE1 = {
 }
 
 D_PRAISE2 = {
-	"Wow! Even ", peeps, " ~can't top that.";	
+	"Wow! Even ", peeps, " ~can't top that.";
 	"I wish I was that good.";
 	"Damn... how do you do that?";
 	"Teach me how to do that, please.";
@@ -241,7 +208,7 @@ LEVEL_END0 = {
 	"And the truth shall be revealed...";
 	"I was robbed.";
 	"gg";
-		
+
 }
 
 LEVEL_END1 = {
@@ -265,7 +232,7 @@ GOODBYE1 = {
 	"ttfn";
 	"Later tater";
 }
-	
+
 GOODBYE2 = {
 	"Adios ", friendname, ".";
 	"~It's been real.";
@@ -279,7 +246,7 @@ GOODBYE3 = {
 	"Au'revoir";
 	"Time to call it a night, till we meet again.";
 }
-	
+
 GOODBYE4 = {
 	"'Till next time.";
 	"Fare thee well.";
@@ -621,7 +588,7 @@ DEATH_FALLING0 = {
 	"Aww crap!";
 	"hehe oops";
 	"I meant to do that.";
-	
+
 }
 
 DEATH_TELEFRAGGED0 = {
@@ -734,10 +701,9 @@ response_insult = {
 	"asswhipe";
 	"fool";
 	"jerkwad";
-	
 }
 
-counselor = { 
+counselor = {
 	"school nurse";
 	"astrologer";
 	"shrink";
@@ -777,7 +743,7 @@ family_member = {
 	"grandmother";
 	"grandfather";
 	"great-uncle's cousin's half-sister";
-	
+
 }
 
 friendname = {
@@ -786,7 +752,6 @@ friendname = {
 	"peepz";
 	"comrades";
 }
-
 
 fighter = {
 	"puke";
@@ -803,10 +768,7 @@ fighter = {
 	"asshole";
 	"vomit-sucking ass licker";
 	"blood sucker";
-	
 }
-
-
 
 femalebot = {
 	"Kyonshi";
@@ -818,7 +780,6 @@ femalebot = {
 	"Jenna";
 	"Tanisha";
 	"Rai";
-	
 }
 
 malebot = {
@@ -865,7 +826,7 @@ botnames = {
 	"Beret";
 }
 
-negative = { 
+negative = {
 	"Nada.";
 	"no.";
 	"nope";
@@ -873,7 +834,7 @@ negative = {
 	"Not just no, but hell no!";
 }
 
-affirmative = { 
+affirmative = {
 	"sure";
 	"why not?";
 	"of course";
@@ -882,13 +843,13 @@ affirmative = {
 	"absolutely";
 }
 
-neutral = { 
+neutral = {
 	"maybe";
 	"I don't know";
 	"perhaps";
 	"I dunno";
 	"possibly";
-	
+
 }
 
 confused_response = {
@@ -897,10 +858,10 @@ confused_response = {
 	"I don't have an inkling about what you just said.";
 	"Say what?";
 	"Sorry, I do not speak ", language, ".";
-	
+
 }
 
-number = { 
+number = {
 	"~one";
 	"~two";
 	"~three";
@@ -929,7 +890,7 @@ number = {
 	"a googleplex";
 }
 
-profession = { 
+profession = {
 	"police officer";
 	"programmer";
 	"level designer";
@@ -954,7 +915,7 @@ disease = {
 	"HPV";
 }
 
-peeps = { 
+peeps = {
 	"Lemmy Kilminster";
 	"Johnny Rotton";
 	"Jello Biafra";
@@ -975,7 +936,7 @@ peeps = {
 	"M. K. Ghandhi";
 	"Tsun Tzu";
 	"Jack Thompson";
-	
+
 }
 
 immaturity01 = {
@@ -985,7 +946,7 @@ immaturity01 = {
 	"Will this ignorance ever end?";
 	"Thank you for being a supreme example of humanity.";
 	"Wow, and I thought ", peeps, " was dumb.";
-	
+
 }
 
 proposition01 = {
@@ -998,25 +959,25 @@ proposition01 = {
 
 }
 
-whenf = { 
+whenf = {
 	"never";
 	"tomorrow?";
 	"where?";
 	"Who's on first?";
 	"in ", number, " millenia.";
 	"yesterday";
-	
+
 }
 
-whenp = { 
+whenp = {
 	"tomorrow";
 	number, " days ago.";
 	number, " years ago";
 	peeps, " said ", number, " decades ago.";
-	
+
 }
 
-time = { 
+time = {
 	"0:00";
 	"1:00";
 	"2:00";
@@ -1073,7 +1034,7 @@ ampm = {
 	"PM";
 }
 
-food = { 
+food = {
 	"pizza";
 	"cheeseburger";
 	"tofu";
@@ -1084,7 +1045,7 @@ food = {
 	"liver";
 }
 
-animal = { 
+animal = {
 	"goat";
 	"simian";
 	"mongoose";
@@ -1107,7 +1068,7 @@ animal = {
 	"beluga whale";
 }
 
-weather = { 
+weather = {
 	"hot";
 	"windy";
 	"rainy";
@@ -1117,7 +1078,7 @@ weather = {
 	"hotter than your ~mom's panties";
 }
 
-month = { 
+month = {
 	"January";
 	"February";
 	"March";
@@ -1132,7 +1093,7 @@ month = {
 	"December";
 }
 
-substance = { 
+substance = {
 	"ink";
 	"chalk";
 	"salt";
@@ -1142,7 +1103,7 @@ substance = {
 	"dog poo";
 	"Janis Joplin's bra";
 	"jock-cheese";
-	
+
 }
 
 
