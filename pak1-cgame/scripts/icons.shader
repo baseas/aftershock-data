@@ -371,8 +371,10 @@ sprites/balloon3
 
 viewBloodBlend
 {
+	nopicmip
 	sort nearest
 	{
+		map gfx/damage/blood_screen.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 		rgbGen identityLighting
 		alphaGen vertex
@@ -381,6 +383,7 @@ viewBloodBlend
 
 waterBubble
 {
+	nopicmip
 	sort underwater
 	cull none
 	entityMergable
