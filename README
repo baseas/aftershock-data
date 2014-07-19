@@ -14,12 +14,11 @@ pak1-cgame.pk3
 	including player models
 
 pak2-mapdata.pk3
-	textures, shaders, models for maps in pak3-maps.pk3
+	textures and sounds for maps
 	and a GPL replacement for original quake artwork (redundant to xcsv-hires.pk3)??
-	include oaunofficial and oa textures?
 
-pak3-maps.pk3
-	GPL maps
+pak3-oamaps.pk3
+	GPL maps and textures from OpenArena
 
 This texture pack is under CC-Attribution-NonCommercial-NoDerivs 3.0 Unported license:
 xcsv-hires.pk3

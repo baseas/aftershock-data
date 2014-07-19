@@ -22,7 +22,7 @@ make_pk3()
 	makepk3 pak0
 	makepk3 pak1-cgame
 	makepk3 pak2-mapdata
-	makepk3 pak3-maps
+	makepk3 pak3-oAMAPS
 }
 
 make_maps()
@@ -46,7 +46,7 @@ make_install()
 
 make_pack()
 {
-	zip aftershock-data.zip {pak0,pak1-cgame,pak2-mapdata,pak3-maps}/*.pk3 xcsv_hires.pk3
+	zip aftershock-data.zip {pak0,pak1-cgame,pak2-mapdata,pak3-oamaps}/*.pk3 xcsv_hires.pk3
 	zip aftershock-maps.zip map-downloads/*.pk3
 }
 
