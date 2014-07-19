@@ -1,0 +1,30 @@
+The data pack consists of aftershock-data.zip, aftershock-maps.zip
+There are two files, because the latter one may be distributed neither on
+CD-ROM nor commercially. The aftershock-data.zip file contains GPL and CC contents.
+
+All data in the following pk3s must be under GPL.
+
+pak0.pk3
+	contains all ui data
+	VMs, cvar lists
+	content may not be overridden by other pk3s
+
+pak1-cgame.pk3
+	all data loaded in cgame
+	including player models
+
+pak2-mapdata.pk3
+	textures, shaders, models for maps in pak3-maps.pk3
+	and a GPL replacement for original quake artwork (redundant to xcsv-hires.pk3)??
+	include oaunofficial and oa textures?
+
+pak3-maps.pk3
+	GPL maps
+
+This texture pack is under CC-Attribution-NonCommercial-NoDerivs 3.0 Unported license:
+xcsv-hires.pk3
+
+The pk3s in aftershock-maps.zip are mostly from worldspawn.org
+and not under GPL. The non-commercial electronic distribution of them is allowed.
+However, they may not be distributed on CD-ROM and the pk3s may not be modified.
+

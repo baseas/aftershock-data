@@ -25,12 +25,16 @@ make_pk3()
 	makepk3 pak3-maps
 }
 
-make_q3df()
+make_maps()
 {
-	mkdir -p _maps
-	for line in `xargs < maps-pack`; do
+	mkdir -p map-downloads
+	for line in `xargs < maplist`; do
 		echo $line
-		curl --progress-bar http://ws.q3df.org/maps/downloads/"$line".pk3 -o _maps/"$line".pk3
+		outfile=map-downloads/"$line"
+		if [ -f $outfile ] && unzip -t map-downloads/"$line".pk3; then
+			continue
+		fi
+		curl --progress-bar http://worldspawn.org/maps/downloads/"$line".pk3 -o map-downloads/"$line".pk3
 	done
 }
 
@@ -38,6 +42,12 @@ make_install()
 {
 	cp pak*/*.pk3 ~/.aftershock/data
 	echo "Files copied to ~/.aftershock/data"
+}
+
+make_pack()
+{
+	zip aftershock-data.zip {pak0,pak1-cgame,pak2-mapdata,pak3-maps}/*.pk3 xcsv_hires.pk3
+	zip aftershock-maps.zip map-downloads/*.pk3
 }
 
 $1

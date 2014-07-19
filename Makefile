@@ -5,9 +5,11 @@ hires:
 	@./make-script.sh make_hires
 pk3:
 	@./make-script.sh make_pk3
-q3df:
-	@./make-script.sh make_q3df
+maps:
+	@./make-script.sh make_maps
 install:
 	@./make-script.sh make_install
+pack:
+	@./make-script.sh make_pack
 
 
