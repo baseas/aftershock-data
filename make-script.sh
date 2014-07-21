@@ -1,9 +1,13 @@
 make_hires()
 {
-	mkdir -p download
-	cd download
-	wget http://ioquake3.org/files/xcsv_hires.zip
+	mkdir -p .tmp
+	cd .tmp
+	echo "Downloading xcsv_hires.zip ..."
+	curl --progress-bar http://ioquake3.org/files/xcsv_hires.zip -o xcsv_hires.zip
 	unzip xcsv_hires.zip
+	cp *.pk3 ..
+	cd ..
+	rm -r .tmp
 }
 
 make_pk3()
@@ -22,7 +26,7 @@ make_pk3()
 	makepk3 pak0
 	makepk3 pak1-cgame
 	makepk3 pak2-mapdata
-	makepk3 pak3-oAMAPS
+	makepk3 pak3-oamaps
 }
 
 make_maps()
@@ -46,8 +50,17 @@ make_install()
 
 make_pack()
 {
-	zip aftershock-data.zip {pak0,pak1-cgame,pak2-mapdata,pak3-oamaps}/*.pk3 xcsv_hires.pk3
-	zip aftershock-maps.zip map-downloads/*.pk3
+	echo "Compressing aftershock-data.zip ..."
+	rm -f $1.pk3
+	zip aftershock-data.zip {pak0,pak1-cgame,pak2-mapdata,pak3-oamaps}/*.pk3 xcsv_bq3hi-res.pk3 > /dev/null
+	echo -n " File size: "
+	ls -lh aftershock-data.zip | awk '{ print $5 }'
+
+	echo "Compressing aftershock-maps.zip ..."
+	rm -f $1.pk3
+	zip aftershock-maps.zip map-downloads/*.pk3 > /dev/null
+	echo -n " File size: "
+	ls -lh aftershock-maps.zip | awk '{ print $5 }'
 }
 
 $1
