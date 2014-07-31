@@ -23,6 +23,33 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 // fuzw.c -- weights for weapon use
 
+#include "inv.h"
+
+#ifndef GTW
+	#define GTW	100
+#endif
+#ifndef MGW
+	#define MGW	100
+#endif
+#ifndef SGW
+	#define SGW	100
+#endif
+#ifndef GLW
+	#define GLW	100
+#endif
+#ifndef RLW
+	#define RLW	100
+#endif
+#ifndef LGW
+	#define LGW	100
+#endif
+#ifndef RGW
+	#define RGW	100
+#endif
+#ifndef PGW
+	#define PGW	100
+#endif
+
 // The gauntlet does always have a positive weight, so the
 // bot will fall back to it if there are no other weapons.
 // It there are no weapons at all and all weights are zero,

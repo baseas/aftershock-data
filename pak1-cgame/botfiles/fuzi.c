@@ -1,33 +1,65 @@
 /*
 ===========================================================================
-Copyright (C) 2006 Dmn_clown (aka: Bob Isaac (rjisaac@gmail.com))
+Copyright (C) 1999-2005 Id Software, Inc.
 
-This file is part of Open Arena and is based upon Mr. Elusive's fuzzy logic
-system found in Quake 3 Arena.
+This file is part of Quake III Arena source code.
 
-Open Arena is free software; you can redistribute it
+Quake III Arena source code is free software; you can redistribute it
 and/or modify it under the terms of the GNU General Public License as
 published by the Free Software Foundation; either version 2 of the License,
 or (at your option) any later version.
 
-Open Arena is distributed in the hope that it will be
+Quake III Arena source code is distributed in the hope that it will be
 useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 //
 // fuzi.c -- weights for item pickups
 
+#include "inv.h"
+
 // use a weight range from 0 to 100 here
 
-#define ARMOR		20
-#define HEALTH		20
-#define POWERUP		40
+#ifndef ARMOR
+	#define ARMOR		20
+#endif
+#ifndef HEALTH
+	#define HEALTH		20
+#endif
+#ifndef POWERUP
+	#define POWERUP		40
+#endif
+#ifndef FLAGW
+	#define FLAGW		500
+#endif
+
+#ifndef MGW
+	#define MGW	100
+#endif
+#ifndef SGW
+	#define SGW	100
+#endif
+#ifndef GLW
+	#define GLW	100
+#endif
+#ifndef RLW
+	#define RLW	100
+#endif
+#ifndef LGW
+	#define LGW	100
+#endif
+#ifndef RGW
+	#define RGW	100
+#endif
+#ifndef PGW
+	#define PGW	100
+#endif
 
 // get a weapon to defend first
 #if INVENTORY_SHOTGUN + INVENTORY_LIGHTNING + INVENTORY_ROCKETLAUNCHER + INVENTORY_PLASMAGUN < 2
@@ -346,7 +378,7 @@ weight "ammo_cells"
 weight "holdable_teleporter"
 {
 	switch (INVENTORY_TELEPORTER) {
-	case 1: return $evalfloat(TELW * POWERUP);
+	case 1: return POWERUP;
 	default: return 0;
 	}
 }
@@ -354,34 +386,34 @@ weight "holdable_teleporter"
 weight "holdable_medkit"
 {
 	switch (INVENTORY_TELEPORTER) {
-	case 1: return $evalfloat(MEDW * POWERUP);
+	case 1: return POWERUP;
 	default: return 0;
 	}
 }
 
 weight "item_quad"
 {
-	return $evalfloat(QW * POWERUP);
+	return POWERUP;
 }
 
 weight "item_enviro"
 {
-	return $evalfloat(ENVW * POWERUP);
+	return POWERUP;
 }
 
 weight "item_haste"
 {
-	return $evalfloat(HAW * POWERUP);
+	return POWERUP;
 }
 
 weight "item_invisibility"
 {
-	return $evalfloat(INW * POWERUP);
+	return POWERUP;
 }
 
 weight "item_regen"
 {
-	return $evalfloat(REGW * POWERUP);
+	return POWERUP;
 }
 
 // This is only used to pickup dropped CTF
@@ -393,7 +425,7 @@ weight "item_regen"
 weight "team_CTF_redflag"
 {
 	switch (INVENTORY_REDFLAG) {
-	case 1: return FGW;
+	case 1: return FLAGW;
 	default: return 300;
 	}
 }
@@ -401,7 +433,7 @@ weight "team_CTF_redflag"
 weight "team_CTF_blueflag"
 {
 	switch (INVENTORY_BLUEFLAG) {
-	case 1: return FGW;
+	case 1: return FLAGW;
 	default: return 300;
 	}
 }
